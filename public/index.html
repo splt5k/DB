@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking de Xadrez</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="transition-colors duration-200" id="body">
+    <div class="min-h-screen p-4 md:p-8" id="mainContainer">
+        <div class="max-w-5xl mx-auto">
+            <!-- Header Section -->
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+                <div class="flex items-center gap-4">
+                    <i class="fas fa-chess-knight text-4xl"></i>
+                    <h1 class="text-3xl font-bold transition-colors">Ranking de Xadrez</h1>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <input 
+                            type="text" 
+                            id="searchInput"
+                            placeholder="Buscar jogador..."
+                            class="pl-10 pr-4 py-2 rounded-lg border focus:ring-2 focus:ring-blue-400 outline-none transition-colors w-full md:w-64">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                    <button 
+                        id="themeToggle"
+                        class="p-2 rounded-lg hover:bg-opacity-10 hover:bg-gray-500 transition-colors">
+                        <i class="fas fa-moon text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <div class="p-4 rounded-lg shadow-md transition-colors" id="statsCard1">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-trophy text-yellow-500 text-2xl"></i>
+                        <div>
+                            <h3 class="text-sm font-semibold opacity-75">Rating Mais Alto</h3>
+                            <p class="text-xl font-bold" id="highestRating">-</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 rounded-lg shadow-md transition-colors" id="statsCard2">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-users text-blue-500 text-2xl"></i>
+                        <div>
+                            <h3 class="text-sm font-semibold opacity-75">Total de Jogadores</h3>
+                            <p class="text-xl font-bold" id="totalPlayers">-</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 rounded-lg shadow-md transition-colors" id="statsCard3">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-chart-line text-green-500 text-2xl"></i>
+                        <div>
+                            <h3 class="text-sm font-semibold opacity-75">Rating Médio</h3>
+                            <p class="text-xl font-bold" id="averageRating">-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table Section -->
+            <div class="rounded-xl shadow-lg overflow-hidden" id="tableContainer">
+                <table class="min-w-full table-auto">
+                    <thead>
+                        <tr class="transition-colors" id="tableHeader">
+                            <th class="px-6 py-4 text-left">Ranking</th>
+                            <th class="px-6 py-4 text-left">Nome</th>
+                            <th class="px-6 py-4 text-left">Rating</th>
+                            <th class="px-6 py-4 text-left">Categoria</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rankingBody">
+                        <!-- Dados serão inseridos aqui -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="/js/theme.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/stats.js"></script>
+    <script src="/js/search.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
